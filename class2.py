@@ -28,6 +28,11 @@ class BBST:
     def __init__(self, key, extra_data=None):
         self.root = Node(None, key, extra_data)
 
+    # add a new node
+    def insert(self, key, extra_data=None):
+        parent_node = self.find(key)
+        self.insert_at(parent_node, key, extra_data)
+
     # add a new node below a given parent
     def insert_at(self, parent, key, extra_data=None):
         new_node = Node(parent, key, extra_data)
@@ -41,8 +46,10 @@ class BBST:
         # aka todo later
         return
 
-    def find(self, key)_value:
-        return None
+    # point to the key if it exists in the tree
+    # if not, point to the parent below which it'd be inserted
+    def find(self, key_value):
+        pass
 
     # note: don't use delete or delete-at with things that store extra_data
     def delete(self, key_value):
@@ -69,10 +76,6 @@ class BBST:
             replacement_node.right = key_node.right
             replacement_node.level = key_node.level
         
-
-# BBST for storing the elements of Qnow
-class Qnow_BBST(BBST):
-    pass
 
 # BBST that has insertions as leaves (sorted by time)
 # and internal nodes = subtree-max over x not in Qnow 
