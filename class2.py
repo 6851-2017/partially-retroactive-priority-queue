@@ -7,7 +7,7 @@ class BBST:
 
     # class for storing Nodes of a BBST
     class Node:
-        
+
         def __init__(self, parent, key, extra_data=None):
             self.parent = parent
             self.level = 0
